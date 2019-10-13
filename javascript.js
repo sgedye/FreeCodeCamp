@@ -134,4 +134,16 @@ function lookUpProfile(name, prop) {
   }
   return "No such contact"; 
 }
-lookUpProfile("Harry", "likes"); // Change these values to test your function
+lookUpProfile("Harry", "likes"); // Change these values to test the function
+
+/* Random Number Generator within a Range */
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
+}
+var myRandom = randomRange(5, 15); //Change values to test
+
+/* Multiple Conditional (Ternary) Operators */
+function checkSign(num) {
+  return (num === 0) ? "zero" : (num < 0) ? "negative" : "positive";
+}
+checkSign(10); // Change this value to test the function
