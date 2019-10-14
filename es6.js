@@ -43,3 +43,12 @@ const squareList = (arr) => {
 const squaredIntegers = squareList(realNumberArray); // test your code
 console.log(squaredIntegers);
 
+// A third way to perform the same task, in even less code
+const realNumberArray = [4, 5.7, -9.8, 3.14, 42, 6, 8.34, -2];
+const squareList = (arr) => {
+  "use strict";
+  const squaredIntegers = arr.filter( (num) => num > 0 && num % parseInt(num) === 0 ).map( (num) => Math.pow(num, 2) );
+  return squaredIntegers;
+};
+const squaredIntegers = squareList(realNumberArray); // test your code
+console.log(squaredIntegers);
