@@ -147,3 +147,29 @@ function checkSign(num) {
   return (num === 0) ? "zero" : (num < 0) ? "negative" : "positive";
 }
 checkSign(10); // Change this value to test the function
+
+/* Recursion */
+function rangeOfNumbers(startNum, endNum) {
+  if (startNum == endNum) {
+    return [startNum];
+  }
+  else {
+    var numbers = rangeOfNumbers(startNum, endNum-1);
+    numbers.push(endNum);
+    return numbers;
+  }
+};
+
+/* Recursion II */
+function countdown(myArray, n) {
+	if (n > 0) {
+		myArray.push(n);
+    countdown(myArray, n-1);
+  }
+  return myArray;
+};
+console.log(countdown(['sock','nine'],7));  //Output: ['sock','nine',7,6,5,4,3,2,1]
+console.log(countdown(['minus','hi'],-3));  //Output: ['minus','hi']
+console.log(countdown(['zero','nine'],0));  //Output: ['zero','nine']
+
+//END
