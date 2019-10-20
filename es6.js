@@ -67,3 +67,20 @@ const half = ({max, min}) => {
 }
 console.log(stats); // should be object
 console.log(half(stats)); // should be 28.015
+
+/* Class - Constructors/Getters/Setters */
+class Thermostat {
+    constructor(fahrenheitTemp) {
+        this._fahrenheitTemp = fahrenheitTemp;
+    }
+    get temperature() {
+        return (5/9 * (this._fahrenheitTemp - 32));
+    }
+    set temperature(updatedTemperature) {
+        this._fahrenheitTemp = updatedTemperature;
+    }
+}
+const thermos = new Thermostat(76); // Fahrenheit
+let temp = thermos.temperature; // 24.44 in C
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in C
