@@ -37,3 +37,8 @@ let myString = "Eleanor Roosevelt";
 let myRegex = /(Franklin|Eleanor).*Roosevelt/;
 let result = myRegex.test(myString);
 // the .* is used for the middle names (. = any char; * = zero or more times).
+
+// Using a regex to remove white space and the beginning and end of a string - note, could use .trim()
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g;
+let result = hello.replace(wsRegex, "");
