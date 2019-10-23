@@ -22,3 +22,8 @@ function copyMachine(arr, num) {
 }
 console.log(copyMachine([true, false, true], 2));
 
+// Check if the given element exists in the array (using a ternary operator):
+function quickCheck(arr, elem) {
+  return arr.indexOf(elem) >= 0 ? true : false;
+}
+console.log(quickCheck(["squash", "onions", "shallots"], "mushrooms"));
