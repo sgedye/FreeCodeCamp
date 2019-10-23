@@ -42,3 +42,6 @@ let result = myRegex.test(myString);
 let hello = "   Hello, World!  ";
 let wsRegex = /^\s+|\s+$/g;
 let result = hello.replace(wsRegex, "");
+// the \s is a special symbol which counts all space, including; spaces, tabs, returns, etc.
+
+//END
