@@ -10,3 +10,15 @@ function sumOfTen(arr) {
   return arr.reduce((a, b) => a + b);
 }
 console.log(sumOfTen([2, 5, 1, 5, 2, 1])); //Output: 10
+
+// Copy the given array 'num' numbers of time into 'newArray'
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    newArr.push([...arr]);
+    num--;
+  }
+  return newArr;
+}
+console.log(copyMachine([true, false, true], 2));
+
