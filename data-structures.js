@@ -27,3 +27,18 @@ function quickCheck(arr, elem) {
   return arr.indexOf(elem) >= 0 ? true : false;
 }
 console.log(quickCheck(["squash", "onions", "shallots"], "mushrooms"));
+
+// Use a for..in loop to find out how many users are online.
+function countOnline(usersObj) {
+  let usersOL = 0;
+  for (let user in usersObj) {
+    if(usersObj[user]['online'] === true) {
+      usersOL++;
+    }
+  }
+  return usersOL; //Returns 2
+}
+let uObj = { Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } };
+countOnline(uObj);
+
+
