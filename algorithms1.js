@@ -1,13 +1,15 @@
-
-
-function factorialize(num) {
-  let answer = 1;
-  for (let i=num; i>0; i--) {
-    answer *= i;
+// Reverse a given string and output it as a string.
+function reverseString(str) {
+  for (var reversedStr = "", i = str.length - 1; i >= 0; i--) {
+    reversedStr += str[i];
   }
-	if (num === 0) {
-		answer = 1;
-	}
-  return answer;
+  return reversedStr;
 }
-factorialize(0);
+// Reverse a given string and output it as a string. (Alternate Solution)
+function reverseString(str) {
+  return str
+    .split("")
+    .reverse()
+    .join("");
+}
+
