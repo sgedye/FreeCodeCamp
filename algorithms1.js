@@ -13,3 +13,26 @@ function reverseString(str) {
     .join("");
 }
 
+// Create a function that takes a string and capitalises only the first letter of each word.
+function titleCase(str) {
+  let outStr = "";
+  let lowerArr = str.toLowerCase().split(" ");
+  for (let i=0; i<lowerArr.length; i++) {
+    let tempChar = "";
+    let tempStr = "";
+    tempChar = lowerArr[i].charAt(0).toUpperCase();
+    tempStr = lowerArr[i].slice(1,);
+    outStr += tempChar.concat(tempStr);
+    if (i < lowerArr.length-1) {
+      outStr += " ";
+    }
+  }
+  console.log(outStr);
+  return outStr;
+}
+titleCase("I'm a liTTle tea pot");
+// Create a function that takes a string and capitalises only the first letter of each word.
+
+function titleCase(str) {
+  return str.toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase());
+}
