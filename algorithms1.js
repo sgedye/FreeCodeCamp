@@ -52,3 +52,13 @@ function getIndexToIns(arr, num) {
   return index;
 }
 getIndexToIns([100, 5, 40, 60], 50);
+
+//Write a function that splits an array (arr) into groups of length (size) and returns them as a two-dimensional array.
+function chunkArrayInGroups(arr, size) {
+  let outArr = [];
+  while (arr.length > 0) {
+		outArr.push(arr.splice(0,size));
+	}
+  return outArr;
+}
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2);
