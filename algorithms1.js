@@ -36,3 +36,19 @@ titleCase("I'm a liTTle tea pot");
 function titleCase(str) {
   return str.toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase());
 }
+
+// Return the lowest index at which a value (num) should be inserted into an array (arr) once it has been sorted.
+function getIndexToIns(arr, num) {
+  // 1. sort array
+  let sortedArr = arr.sort(function(a,b){return a-b});
+  // 2. where does it go
+  let index = 0;
+  for (let i=0; i<sortedArr.length; i++) {
+    if (num > sortedArr[i]) {
+      index++;
+    }
+  }
+  console.log(sortedArr);
+  return index;
+}
+getIndexToIns([100, 5, 40, 60], 50);
