@@ -29,7 +29,7 @@ let result = userCheck.test(username);
 
 // Use lookaheads to match passwords that are greater than 5 characters long, do not begin with numbers, and have two consecutive digits.
 let sampleWord = "abc123";
-let pwRegex = /(?=\w{6,})(?=\D+\d{2})/i;
+let pwRegex = /^(?=\w{6,})(?=\D+\d{2})/i;
 let result = pwRegex.test(sampleWord);
 
 // A regex to check for the names of Franklin Roosevelt or Eleanor Roosevelt. Should be case sensitive and make concessions for middle names.
