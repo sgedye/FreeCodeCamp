@@ -22,9 +22,14 @@ console.log(Object.prototype.isPrototypeOf(Dog)); //Returns true
 function Animal() { }
 Animal.prototype = {
   constructor: Animal,
-  eat: function() {
-    console.log("nom nom nom");
-  }
+  eat: function() { console.log("nom nom nom"); }
 };
-let beagle = Object.create(Animal.prototype);
-beagle.eat(); //Output: nom nom nom
+function Cat() { }
+Cat.prototype = Object.create(Animal.prototype);
+Cat.prototype.constructor = Cat;
+Cat.prototype.talk = function() { console.log("meow"); };
+let tabby = new Cat();
+tabby.eat(); //Output: nom nom nom
+tabby.talk(); //Output: meow
+Cat.prototype.eat = function() { console.log("munch munch munch"); };
+tabby.eat(); //Output: munch munch munch
