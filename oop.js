@@ -41,3 +41,10 @@ function Bird() {
 }
 let fluffy = new Bird();
 console.log(fluffy.getWeight());
+
+// Immediately Invoked Function Expression (IIFE)
+(function () {
+  console.log("Hi there");
+})(); //Output: Hi there
+
+
