@@ -33,3 +33,11 @@ tabby.eat(); //Output: nom nom nom
 tabby.talk(); //Output: meow
 Cat.prototype.eat = function() { console.log("munch munch munch"); };
 tabby.eat(); //Output: munch munch munch
+
+//Private variables and public 'getter' methods
+function Bird() {
+  let weight = 15; //Private variable
+  this.getWeight = function() { return weight; }; //Publicly available getter method
+}
+let fluffy = new Bird();
+console.log(fluffy.getWeight());
