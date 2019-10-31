@@ -78,3 +78,22 @@ var arrA = [1,2,3];
 var arrB = [4,5,6];
 var x = arrA.concat(arrB); // arrA (and arrB) remain the same, but x = [1,2,3,4,5,6]
 arrA.push(arrB); // arrA is mutated (changed) to [1,2,3,[4,5,6]]
+
+
+//
+// the global variable
+var watchList = [
+  { "Title": "The Dark Knight", "Director": "Christopher Nolan", "Rated": "PG-13", "imdbRating": "9.0" },
+  { "Title": "Batman Begins", "Director": "Christopher Nolan", "Rated": "PG-13", "imdbRating": "8.3" },
+  { "Title": "Avatar", "Director": "Christopher Nolan", "Rated": "PG-13", "imdbRating": "7.9" },
+  { "Title": "Avatar", "Director": "James Cameron", "Rated": "PG-13", "imdbRating": "7.4" }
+];
+function getRating(watchList){
+  // Creating an array (myList) of ratings (converted to numbers) of movies directed by C.N.
+  var myList = watchList
+    .filter(movie => movie.Director === "Christopher Nolan")
+    .map(movie => { return Number(movie.imdbRating) });  
+  // Getting the sum of the array using reduce(), then dividing by the number of elements to get the average rating of a movie directed by C.Nolan
+  return myList.reduce((acc, val) => acc + val, 0) / myList.length;
+}
+console.log(getRating(watchList)); //Output: 8.4
