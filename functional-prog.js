@@ -72,3 +72,9 @@ for(var i=0; i < watchList.length; i++){
 }*/
 console.log(rating);
 
+
+/** .push() v.s. .concat() for arrays **/
+var arrA = [1,2,3];
+var arrB = [4,5,6];
+var x = arrA.concat(arrB); // arrA (and arrB) remain the same, but x = [1,2,3,4,5,6]
+arrA.push(arrB); // arrA is mutated (changed) to [1,2,3,[4,5,6]]
