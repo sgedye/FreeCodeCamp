@@ -80,15 +80,14 @@ var x = arrA.concat(arrB); // arrA (and arrB) remain the same, but x = [1,2,3,4,
 arrA.push(arrB); // arrA is mutated (changed) to [1,2,3,[4,5,6]]
 
 
-//
-// the global variable
+// Using .map(), .filter() and .reduce() to find the average rating of movies by C. Nolan
 var watchList = [
   { "Title": "The Dark Knight", "Director": "Christopher Nolan", "Rated": "PG-13", "imdbRating": "9.0" },
   { "Title": "Batman Begins", "Director": "Christopher Nolan", "Rated": "PG-13", "imdbRating": "8.3" },
   { "Title": "Avatar", "Director": "Christopher Nolan", "Rated": "PG-13", "imdbRating": "7.9" },
   { "Title": "Avatar", "Director": "James Cameron", "Rated": "PG-13", "imdbRating": "7.4" }
 ];
-function getRating(watchList){
+function getRating(watchList) {
   // Creating an array (myList) of ratings (converted to numbers) of movies directed by C.N.
   var myList = watchList
     .filter(movie => movie.Director === "Christopher Nolan")
