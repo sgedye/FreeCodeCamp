@@ -33,10 +33,42 @@ console.log(newList); //Output: ["pie", "pizza", "pineapple", "cheese"]
 const bookList = ["GoT", "LotR", "R+J", "The little book of calm"];
 function add (bookList, bookName) {
   let myBookList = [];
-	Object.assign(myBookList, bookList);
-	myBookList.push(bookName);	
+  Object.assign(myBookList, bookList);
+  myBookList.push(bookName);	
   return myBookList;
 }
 var newBookList = add(bookList, 'A Brief History of Time');
 console.log(bookList); //Output: ["GoT", "LotR", "R+J", "The little book of calm"]
 console.log(newBookList); //Output: ["GoT", "LotR", "R+J", "The little book of calm", "A Brief History of Time"]
+
+// OR THIS //
+const bookList = ["GoT", "LotR", "R+J", "The little book of calm"];
+function add(list, bookName) {
+  return [...list, bookName];
+}
+var newBookList = add(bookList, 'A Brief History of Time');
+console.log(bookList); //Output: ["GoT", "LotR", "R+J", "The little book of calm"]
+console.log(newBookList); //Output: ["GoT", "LotR", "R+J", "The little book of calm", "A Brief History of Time"]
+
+
+/** Using MAP() **/
+// the global variable
+var watchList = [
+  { "Title": "The Dark Knight", "Year": "2008", "Rated": "PG-13", "imdbRating": "9.0" },
+  { "Title": "Batman Begins", "Year": "2005", "Rated": "PG-13", "imdbRating": "8.3" },
+  { "Title": "Avatar", "Year": "2009", "Rated": "PG-13", "imdbRating": "7.9" }
+];
+// This block of code does the same thing as the for loop below, but uses map()
+var rating = watchList.map(obj => {
+   let rObj = {};
+   rObj["title"] = obj.Title;
+   rObj["rating"] = obj.imdbRating;
+   return rObj;
+});
+// For loop, which does the same things and the map function above
+/*var rating = [];
+for(var i=0; i < watchList.length; i++){
+  rating.push({title: watchList[i]["Title"],  rating: watchList[i]["imdbRating"]});
+}*/
+console.log(rating);
+
