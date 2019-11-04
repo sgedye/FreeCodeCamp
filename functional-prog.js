@@ -102,3 +102,10 @@ function sentensify(str) {
   return str.split(/\W/).join(" ");
 }
 sentensify("May-the-force-be-with-you"); //Returns "May the force be with you"
+
+//Turning a page title into a URL-friendly string
+var globalTitle = "  Winter Is   Coming ";
+function urlSlug(title) {
+    return title.toLowerCase().trim().split(/\W+/).join("-");
+}
+var winterComing = urlSlug(globalTitle); // Returns "winter-is-coming"
