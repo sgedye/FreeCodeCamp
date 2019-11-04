@@ -96,3 +96,9 @@ function getRating(watchList) {
   return myList.reduce((acc, val) => acc + val, 0) / myList.length;
 }
 console.log(getRating(watchList)); //Output: 8.4
+
+//Using split (str->arr) and join (arr->str):
+function sentensify(str) {
+  return str.split(/\W/).join(" ");
+}
+sentensify("May-the-force-be-with-you"); //Returns "May the force be with you"
