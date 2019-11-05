@@ -40,7 +40,8 @@ function Bird() {
   this.getWeight = function() { return weight; }; //Publicly available getter method
 }
 let fluffy = new Bird();
-console.log(fluffy.getWeight());
+console.log(fluffy.weight); //Output: undefined
+console.log(fluffy.getWeight()); //Output: 15
 
 // Immediately Invoked Function Expression (IIFE)
 (function () {
