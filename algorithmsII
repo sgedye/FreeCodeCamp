@@ -1,0 +1,40 @@
+// Sum all the number between the two elements in a given array
+function sumAll(arr) {
+  let x = 0;
+  let y = 0;
+  let result = 0;
+  if (arr[0] <= arr[1]) {
+    x = arr[0];
+    y = arr[1];
+  } else {
+    x = arr[1];
+    y = arr[0];
+  } //x <= y
+  for (let i=x; i<=y; i++) {
+    result += i;
+  }
+  return result;
+}
+sumAll([1, 4]);
+
+// OR //
+function sumAll(arr) {
+  var sum = 0;
+  for (var i = Math.min(...arr); i <= Math.max(...arr); i++) {
+    sum += i;
+  }
+  return sum;
+}
+sumAll([1, 4]);
+
+
+// You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+
+function destroyer(arr) {
+  let killerArr = [];
+  for (let i=1; i<arguments.length; i++) {
+    killerArr.push(arguments[i]);
+  }
+  return arr.filter(item => !killerArr.includes(item));
+}
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
