@@ -53,3 +53,34 @@ function spinalCase(str) {
 	return myStr.toLowerCase();
 }
 spinalCase('AllThe-small Things');
+
+//Pig Latin - modifying stings - my solution:
+function translatePigLatin(str) {
+  let vowelArr = ['a','e','i','o','u'];
+  let constStr = "";	
+  let index = 0;
+  while ((vowelArr.indexOf(str.charAt(index)) < 0) && (index<str.length)) {
+    constStr += str.charAt(index);
+    index++;
+  }
+  if (constStr === "") {
+    str += "way";
+  } else {
+    str = str.slice(constStr.length) + constStr + "ay";
+  }
+  return str;
+}
+translatePigLatin("rythym");
+
+//Or - a more elegant solution using regex
+function translatePigLatin(str) {
+  let consonantRegex = /^[^aeiou]+/;
+  let myConsonants = str.match(consonantRegex);
+  return myConsonants !== null
+    ? str
+        .replace(consonantRegex, "")
+        .concat(myConsonants)
+        .concat("ay")
+    : str.concat("way");
+}
+translatePigLatin("consonant");
