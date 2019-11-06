@@ -63,16 +63,11 @@ function translatePigLatin(str) {
     constStr += str.charAt(index);
     index++;
   }
-  if (constStr === "") {
-    str += "way";
-  } else {
-    str = str.slice(constStr.length) + constStr + "ay";
-  }
-  return str;
+  return (constStr === "") ? str += "way" : str = str.slice(constStr.length) + constStr + "ay";
 }
 translatePigLatin("rythym");
 
-//Or - a more elegant solution using regex
+//Or - a different solution using regex
 function translatePigLatin(str) {
   let consonantRegex = /^[^aeiou]+/;
   let myConsonants = str.match(consonantRegex);
