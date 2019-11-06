@@ -38,3 +38,18 @@ function destroyer(arr) {
   return arr.filter(item => !killerArr.includes(item));
 }
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+
+// Change a given string to spinal case (all-lowercase-with-hyphens)
+function spinalCase(str) {
+	let myArr = str.match(/[A-Z][a-z]+|[a-z]+/g);
+	let myStr = "";
+	for (let i = 0; i < myArr.length; i++) {
+		myStr += myArr[i];
+		if (i != myArr.length-1) {
+			myStr += "-";
+		}
+	}
+	return myStr.toLowerCase();
+}
+spinalCase('AllThe-small Things');
