@@ -118,3 +118,17 @@ function myReplace(str, before, after) {
   return outStr;
 }
 myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+
+// Missing Letter
+function fearNotLetter(str) {
+  let missingChar;
+	for (let i=1; i<str.length; i++) {
+		if ((str.charCodeAt(i-1) + 1) != str.charCodeAt(i)) {
+			missingChar = String.fromCharCode(str.charCodeAt(i-1)+1);
+		}
+  }
+  return missingChar;
+}
+fearNotLetter("abce"); //Returns 'd'
+fearNotLetter("abcde"); //Returns undefined
