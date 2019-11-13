@@ -104,3 +104,17 @@ whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
 whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3});
 
+
+//Find and replace a string
+function myReplace(str, before, after) {
+  let capsArr = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+	let tempStr = "";
+	if (capsArr.includes(before.charAt(0))) { 
+		tempStr = after.charAt(0).toUpperCase() + after.slice(1);
+	} else {
+		tempStr = after;
+	}
+	let outStr = str.replace(before, tempStr);
+  return outStr;
+}
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
