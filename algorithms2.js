@@ -146,3 +146,15 @@ function uniteUnique(arr) {
   return outArr;
 }
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+
+// Convert basic symbols to their HTML entities
+function convertHTML(str) {
+    return String(str)
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/"/g, '&quot;')
+			.replace(/'/g, '&apos;');
+}
+convertHTML("Dolce & Gabbana"); //Returns: Dolce &amp; Gabbana
