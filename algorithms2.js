@@ -132,3 +132,17 @@ function fearNotLetter(str) {
 }
 fearNotLetter("abce"); //Returns 'd'
 fearNotLetter("abcde"); //Returns undefined
+
+
+// Merge two or more arrays into a single array showing each number only once, and in the order given.
+function uniteUnique(arr) {
+	let inArr = [...arguments].flat();
+  let outArr = [];
+	for (let i=0; i<inArr.length; i++) {
+		if (outArr.indexOf(inArr[i]) === -1) {
+			outArr.push(inArr[i]);
+		}
+	}
+  return outArr;
+}
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
