@@ -183,3 +183,28 @@ function sumFibs(num) {
 sumFibs(100); //Returns: 188 (1+1+3+5+13+21+55+89)
 
 
+//Sum All Primes
+function sumPrimes(num) {
+  //Find all primes upto and including num
+  let primeArr = [];
+	for (let i=2; i<=num; i++) {
+	  let isPrime = true;
+		for (let j=2; j<i; j++) {
+			if (i % j === 0) {
+				isPrime = false;
+			}
+		}
+		if (isPrime === true) {
+			primeArr.push(i);
+		}
+	}
+	console.log(primeArr);
+	let result = 0;
+	for (let i=0; i<primeArr.length; i++) {
+		result += primeArr[i];
+	}
+  console.log(result);
+  return result;
+}
+sumPrimes(3); //Result 5 (2+3)
+sumPrimes(10); //Result 17 (2+3+5+7)
