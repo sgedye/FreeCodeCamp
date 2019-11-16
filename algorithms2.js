@@ -165,23 +165,19 @@ function sumFibs(num) {
   let index = 1;
   let fibNext = 0;
   let fibArr = [1,1];
-  while (num > fibNext) {
-    if (num === 1) {
-      //do nothing | returns: fibArr[1,1]
-    } else {
+    while (num > fibNext) {
       fibNext = fibArr[index] + fibArr[index-1];
       if (num >= fibNext) {
-				fibArr.push(fibNext);
-			}
+	fibArr.push(fibNext);
+      }
       index++;
     }
-  }
-	let result = 0;
-	for (let i=0; i<fibArr.length; i++) {
-		if (fibArr[i] % 2 == 1) {
-			result += fibArr[i];
-		}
-	}
+    let result = 0;
+    for (let i=0; i<fibArr.length; i++) {
+      if (fibArr[i] % 2 == 1) {
+	result += fibArr[i];
+      }
+    }
   return result;
 }
 sumFibs(100); //Returns: 188 (1+1+3+5+13+21+55+89)
