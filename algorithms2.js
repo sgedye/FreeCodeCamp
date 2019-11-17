@@ -208,3 +208,55 @@ function sumPrimes(num) {
 }
 sumPrimes(3); //Result 5 (2+3)
 sumPrimes(10); //Result 17 (2+3+5+7)
+
+
+
+//Finding the Smallest Common Multiple
+function smallestCommons(arr) {
+  let minVal = arr[0];
+  let maxVal = arr[0];
+  if (arr[0] > arr[1]) {
+    minVal = arr[1];
+  } else {
+    maxVal = arr[1];
+  }
+  let counter = maxVal;
+  let result = 0;
+  let isCommonMultiple = false;
+  while (isCommonMultiple === false) {
+    let isSCM = true;
+    for (let i=minVal; i<=maxVal; i++) {
+      if (counter % i != 0) {
+        isSCM = false;
+      }
+    }
+    if (isSCM === true) {
+      isCommonMultiple = true;
+      result = counter;
+    }
+    counter++;
+  }
+  return result;
+}
+smallestCommons([1,5]);
+
+// A cleaner faster way
+const smallestCommons = arr => {
+  let max = Math.max(...arr);
+  let min = Math.min(...arr);
+  // Initially the solution is assigned to the highest value of the array
+  let solution = max;
+
+  for (let i = max - 1; i >= min; i--) {
+    // Each time the solution checks (i.e. sol%i===0) it won't be necessary
+    // to increment 'max' to our solution and restart the loop
+    if (solution % i) {
+      solution += max;
+      i = max;
+    }
+  }
+  return solution;
+};
+
+// test here
+smallestCommons([1, 5]);
