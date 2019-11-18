@@ -151,11 +151,11 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 // Convert basic symbols to their HTML entities
 function convertHTML(str) {
     return String(str)
-			.replace(/&/g, '&amp;')
-			.replace(/</g, '&lt;')
-			.replace(/>/g, '&gt;')
-			.replace(/"/g, '&quot;')
-			.replace(/'/g, '&apos;');
+	.replace(/&/g, '&amp;')
+	.replace(/</g, '&lt;')
+	.replace(/>/g, '&gt;')
+	.replace(/"/g, '&quot;')
+	.replace(/'/g, '&apos;');
 }
 convertHTML("Dolce & Gabbana"); //Returns: Dolce &amp; Gabbana
 
@@ -187,22 +187,22 @@ sumFibs(100); //Returns: 188 (1+1+3+5+13+21+55+89)
 function sumPrimes(num) {
   //Find all primes upto and including num
   let primeArr = [];
-	for (let i=2; i<=num; i++) {
-	  let isPrime = true;
-		for (let j=2; j<i; j++) {
-			if (i % j === 0) {
-				isPrime = false;
-			}
-		}
-		if (isPrime === true) {
-			primeArr.push(i);
-		}
-	}
-	console.log(primeArr);
-	let result = 0;
-	for (let i=0; i<primeArr.length; i++) {
-		result += primeArr[i];
-	}
+  for (let i=2; i<=num; i++) {
+    let isPrime = true;
+    for (let j=2; j<i; j++) {
+      if (i % j === 0) {
+	isPrime = false;
+      }
+    }
+    if (isPrime === true) {
+      primeArr.push(i);
+    }
+  }
+  console.log(primeArr);
+  let result = 0;
+  for (let i=0; i<primeArr.length; i++) {
+    result += primeArr[i];
+  }
   console.log(result);
   return result;
 }
