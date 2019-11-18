@@ -260,3 +260,11 @@ const smallestCommons = arr => {
 
 // test here
 smallestCommons([1, 5]);
+
+
+//Flatten Array
+function steamrollArray(arr) {
+  return arr.flat(Infinity);
+}
+steamrollArray([1, [2], [3, [[4]]]]); //Returns: [1,2,3,4]
+
