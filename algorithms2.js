@@ -268,3 +268,16 @@ function steamrollArray(arr) {
 }
 steamrollArray([1, [2], [3, [[4]]]]); //Returns: [1,2,3,4]
 
+
+//Convert a string of binary numbers into a secret text
+function binaryAgent(str) {
+  let inArr = str.split(" ");
+  let outArr = [];
+  for (let i=0; i<inArr.length; i++) {    
+    let tempCC = parseInt(Number(inArr[i]), 2);
+    outArr.push(String.fromCharCode(tempCC));
+  }
+  return outArr.join('');
+}
+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+//Returns: "Aren't bonfires fun!?"
