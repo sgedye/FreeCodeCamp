@@ -281,3 +281,20 @@ function binaryAgent(str) {
 }
 binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
 //Returns: "Aren't bonfires fun!?"
+
+// Checking for truthy values
+function truthCheck(collection, pre) {
+  // Is everyone being true?
+  let isTrue = true;
+  for (let i=0; i<collection.length; i++) {
+    console.log(collection[i][pre]);
+    if (collection[i][pre]) {
+      //do nothing
+    } else {
+      isTrue = false;
+      console.log(collection[i][pre] + " is a falsy value");
+    }
+  }
+  return isTrue;
+}
+truthCheck([{"single": "double"}, {"single": NaN}], "single"); //Returns: False
