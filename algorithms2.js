@@ -298,3 +298,27 @@ function truthCheck(collection, pre) {
   return isTrue;
 }
 truthCheck([{"single": "double"}, {"single": NaN}], "single"); //Returns: False
+
+// Arguments Optional
+function addTogether() {
+  if (arguments.length === 2) {
+    if (typeof(arguments[0]) === "number") {
+      if (typeof(arguments[1]) === "number") {
+        return arguments[0] + arguments[1];
+      }
+    }
+  } else if (arguments.length === 1) {
+    if (typeof(arguments[0]) === "number") {
+      const initArg = arguments[0];
+      return function addMe(n) { 
+        if (typeof(n) === "number") {
+          return n + initArg;
+        } else {
+          return undefined;
+        }
+      }
+    }
+  }
+  return undefined;
+}
+addTogether(2)(3); //Return 5
