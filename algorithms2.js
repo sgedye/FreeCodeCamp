@@ -322,3 +322,29 @@ function addTogether() {
   return undefined;
 }
 addTogether(2)(3); //Return 5
+
+
+// Create a person -- Using Getters and Setters:
+var Person = function(firstAndLast) {
+  let fullName = arguments[0];
+  let firstName = arguments[0].split(" ")[0];
+  let lastName = arguments[0].split(" ")[1];
+
+  this.getFullName = function() { 
+    return firstName.concat(" ").concat(lastName);
+  },
+  this.getFirstName = () => { return firstName; },
+  this.getLastName = () => { return lastName; },
+  this.setFirstName = function(first) {
+    firstName = first;
+  },
+  this.setLastName = (last) => {
+    lastName = last;
+  },
+  this.setFullName = (firstAndLast) => {
+    firstName = firstAndLast.split(" ")[0];
+    lastName = firstAndLast.split(" ")[1];
+    fullName = firstName.concat(" ").concat(lastName);
+  }
+};
+var bob = new Person('Bob Ross');
