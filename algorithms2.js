@@ -348,3 +348,10 @@ var Person = function(firstAndLast) {
   }
 };
 var bob = new Person('Bob Ross');
+console.log(bob.getFirstName()); //Bob
+console.log(bob.getLastName()); //Ross
+bob.setFirstName('Ricky');
+console.log(bob.getFullName()); //Ricky Ross
+bob.setFullName('John Doe')
+console.log(bob.getFullName()); //John Doe
+console.log(bob.getFirstName()); //John
