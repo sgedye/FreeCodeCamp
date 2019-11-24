@@ -355,3 +355,22 @@ console.log(bob.getFullName()); //Ricky Ross
 bob.setFullName('John Doe')
 console.log(bob.getFullName()); //John Doe
 console.log(bob.getFirstName()); //John
+
+
+//Maths | Calculating the Orbital Periods of Objects
+function orbitalPeriod(arr) {
+  var GM = 398600.4418;
+  var earthRadius = 6367.4447;
+  let outArr = [];
+  for (let i=0; i<arr.length; i++) {
+    let combinedRadius = earthRadius + arr[i]["avgAlt"];
+    let orbPeriod = Math.PI * 2 * (Math.sqrt(Math.pow(combinedRadius,3) / GM));
+    let obj = {name, orbitalPeriod};
+    obj.name = arr[i].name;
+    obj.orbitalPeriod = Math.round(orbPeriod);
+    outArr.push(obj);
+  }
+  return outArr;
+}
+orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])); //[{"name":"sputnik","orbitalPeriod":86400}]
