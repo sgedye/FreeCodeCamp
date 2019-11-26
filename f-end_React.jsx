@@ -5,7 +5,7 @@ const MyComponent = () => {
   );
 };
 
-//Create a Component with Composition (a child component)
+//Create a Component with Composition (a child component) and render it to an HTML div (with ID: idOfAnHtmlElement)
 const ChildComponent = () => {
   return (
     <div>
@@ -24,3 +24,4 @@ class ParentComponent extends React.Component {
     );
   }
 };
+ReactDOM.render(<ParentComponent />, document.getElementById("idOfAnHtmlElement"));
