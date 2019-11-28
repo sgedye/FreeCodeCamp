@@ -25,3 +25,24 @@ class ParentComponent extends React.Component {
   }
 };
 ReactDOM.render(<ParentComponent />, document.getElementById("idOfAnHtmlElement"));
+
+//Pass Props to a Stateless Functional Component
+const CurrentDate = (props) => {
+  return (
+    <div>
+      <p>The current date is: {props.date}</p>
+    </div>
+  );
+};
+class Calendar extends React.Component {
+  constructor(props) { super(props); }
+  render() {
+    return (
+      <div>
+        <h3>What date is it?</h3>
+        <CurrentDate date={Date()}/>
+      </div>
+    );
+  }
+}; //Return What date is it? The current date is: Thu Nov 28 2019 11:52:01 GMT+1100 (AEST)
+
