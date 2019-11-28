@@ -46,3 +46,23 @@ class Calendar extends React.Component {
   }
 }; //Return What date is it? The current date is: Thu Nov 28 2019 11:52:01 GMT+1100 (AEST)
 
+
+//Pass an array as props.
+const List = (props) => {
+  return <p>{props.task.join(", ")}</p>
+};
+
+class ToDo extends React.Component {
+  constructor(props) { super(props); }
+  render() {
+    return (
+      <div>
+        <h1>To Do Lists</h1>
+        <h2>Today:</h2>
+        <List task={['eat cake', 'buy pizza', 'smell the roses']}     />
+        <h2>Tomorrow:</h2>
+        <List task={['jump', 'hop', 'walk', 'run', 'fight!']}/>
+      </div>
+    );
+  }
+}; //Return To Do Lists \n Today: eat cake, buy pizza, smell the roses \n Tomorrow: jump, hop, walk, run, fight!
