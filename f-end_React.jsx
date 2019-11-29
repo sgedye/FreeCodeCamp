@@ -66,3 +66,16 @@ class ToDo extends React.Component {
     );
   }
 }; //Return To Do Lists \n Today: eat cake, buy pizza, smell the roses \n Tomorrow: jump, hop, walk, run, fight!
+
+
+//Declaring defaul values
+const ShoppingCart = (props) => {
+  return (
+    <div>
+      <h1>Shopping Cart Component</h1>
+    </div>
+  )
+};
+ShoppingCart.defaultProps = { items: 0 };
+
+
